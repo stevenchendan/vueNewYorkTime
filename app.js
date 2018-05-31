@@ -8,6 +8,10 @@ var vm = new Vue({
       {title: "four the last time", abstract: "lorem ipsum some test dimsum"}
     ]
   },
+  mounted: function() {
+    axios.get("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=my-key")
+    .then(response => {this.results = response.data.results}) 
+  },
   methods: {
 
   }
